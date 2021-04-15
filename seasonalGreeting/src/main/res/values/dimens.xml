@@ -1,0 +1,87 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+
+    <dimen name="jc_start_button_w_h_normal">45dp</dimen>
+    <dimen name="jc_start_button_w_h_fullscreen">62dp</dimen>
+
+    <dimen name="page_margin">-16dp</dimen>
+    <dimen name="page_padding">100dp</dimen>
+
+    <dimen name="textSmall">@dimen/_10ssp</dimen>
+    <dimen name="textMedium">@dimen/_12ssp</dimen>
+    <dimen name="textLarge">@dimen/_15ssp</dimen>
+
+
+    <dimen name="spacing_xsmall">2dp</dimen>
+    <dimen name="spacing_small">3dp</dimen>
+    <dimen name="spacing_medium">5dp</dimen>
+    <dimen name="spacing_middle">10dp</dimen>
+    <dimen name="spacing_large">15dp</dimen>
+    <dimen name="spacing_mlarge">20dp</dimen>
+    <dimen name="spacing_xmlarge">40dp</dimen>
+    <dimen name="spacing_xxlarge">50dp</dimen>
+
+    <!--Text View Size-->
+    <dimen name="textSmall6x">@dimen/_6ssp</dimen>
+    <dimen name="textSmall8x">@dimen/_8ssp</dimen>
+    <dimen name="textSmall10x">@dimen/_10ssp</dimen>
+    <dimen name="textMedium12x">@dimen/_12ssp</dimen>
+    <dimen name="textMedium14x">@dimen/_14ssp</dimen>
+    <dimen name="textLarge16x">@dimen/_16ssp</dimen>
+    <dimen name="textExtraLarge18x">@dimen/_18ssp</dimen>
+
+    <dimen name="businessCardSize">@dimen/_180sdp</dimen>
+
+
+    <dimen name="size_ten">10dp</dimen>
+    <dimen name="size_five">5dp</dimen>
+    <dimen name="size_sixteen">16dp</dimen>
+    <dimen name="size_three">3dp</dimen>
+    <dimen name="size_two">2dp</dimen>
+    <dimen name="size_zero">0dp</dimen>
+    <dimen name="size_thirty_five">35dp</dimen>
+    <dimen name="size_forty">40dp</dimen>
+    <dimen name="size_fifty">50dp</dimen>
+    <dimen name="size_one">1dp</dimen>
+    <dimen name="size_two_hundred">200dp</dimen>
+    <dimen name="grid_expected_size">320dp</dimen>
+
+    <dimen name="sps_down_counter_width">70dp</dimen>
+    <dimen name="sps_range_date_width">150dp</dimen>
+    <dimen name="sps_value_space">110dp</dimen>
+    <dimen name="sps_txt_size_little">10dp</dimen>
+
+    <dimen name="sps_lpr_sz_14">14dp</dimen>
+    <dimen name="sps_lpr_sz_16">16dp</dimen>
+    <dimen name="sps_lpr_sz_18">18dp</dimen>
+    <dimen name="sps_lpr_sz_25">25dp</dimen>
+    <dimen name="sps_lpr_sz_20">20dp</dimen>
+    <dimen name="sps_lpr_sz_30">30dp</dimen>
+    <dimen name="sps_lpr_sz_40">40dp</dimen>
+    <dimen name="sps_lpr_sz_50">50dp</dimen>
+    <dimen name="sps_lpr_sz_60">60dp</dimen>
+    <dimen name="sps_lpr_sz_70">70dp</dimen>
+    <dimen name="sps_lpr_sz_80">80dp</dimen>
+    <dimen name="sps_lpr_sz_90">90dp</dimen>
+    <dimen name="sps_lpr_sz_100">100dp</dimen>
+    <dimen name="sps_lpr_sz_250">250dp</dimen>
+
+    <dimen name="sps_txt_sz_6" >6sp</dimen>
+    <dimen name="sps_txt_sz_8" >8sp</dimen>
+    <dimen name="sps_txt_sz_10" >10sp</dimen>
+    <dimen name="sps_txt_sz_12" >12sp</dimen>
+    <dimen name="sps_txt_sz_14" >14sp</dimen>
+    <dimen name="sps_txt_sz_16">16dip</dimen>
+    <dimen name="sps_txt_sz_18">18dip</dimen>
+    <dimen name="sps_txt_sz_20">20dip</dimen>
+    <dimen name="sps_txt_sz_22">22dip</dimen>
+    <dimen name="sps_lpr_150">150dp</dimen>
+    <dimen name="sps_lpr_5">5dp</dimen>
+    <dimen name="sps_lpr_7">7dp</dimen>
+    <dimen name="sps_lpr_10">10dp</dimen>
+    <dimen name="sps_txt_sz_40">40dip</dimen>
+
+    <dimen name="google_1x">8dp</dimen>
+
+</resources>

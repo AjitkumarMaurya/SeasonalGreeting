@@ -24,6 +24,9 @@
         <enum name="OpenSans_Regular" value="8" />
         <enum name="OpenSans_SemiBold" value="9" />
         <enum name="OpenSans_SemiBoldItalic" value="10" />
+        <enum name="montserrat_regular" value="11" />
+        <enum name="montserrat_semi_bold" value="12" />
+        <enum name="montserrat_bold" value="13" />
     </attr>
 
 </resources>

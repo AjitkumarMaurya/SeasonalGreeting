@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_BG"
+    android:orientation="vertical"
+    tools:context=".activity.ListOfGreetingsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_back_arrow" />
+
+        <com.fincasys.seasonalgreeting.views.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_toEndOf="@id/ivBack"
+            android:text="Seasonal Greetings"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textLarge16x"
+            app:fontName="OpenSans_SemiBold" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/MainList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        <RelativeLayout
+            android:id="@+id/relativeNoDataFound"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/ivIcon"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/no_connect" />
+
+            <com.fincasys.seasonalgreeting.views.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivIcon"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="None!"
+                android:textColor="@color/black"
+                android:textSize="@dimen/textMedium14x"
+                app:fontName="OpenSans_SemiBold" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

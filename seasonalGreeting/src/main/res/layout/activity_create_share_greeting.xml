@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_BG"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:src="@drawable/ic_back_arrow" />
+
+        <com.fincasys.seasonalgreeting.views.CustomTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_toStartOf="@id/ivShareCard"
+            android:layout_toEndOf="@id/ivBack"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Seasonal Greeting"
+            android:textColor="@color/black"
+            android:textSize="@dimen/textMedium14x"
+            app:fontName="OpenSans_SemiBold" />
+
+        <ImageView
+            android:id="@+id/ivShareCard"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_toStartOf="@id/ivHome"
+            android:src="@drawable/ic_share_black_24dp" />
+
+        <ImageView
+            android:id="@+id/ivHome"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:src="@drawable/ic_home_black_24dp"
+            app:tint="@color/black" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:id="@+id/linLayMain"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_310sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/img_backgrund"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY" />
+                    <!-- Left Side-->
+                    <LinearLayout
+                        android:id="@+id/lyt_left_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                       android:layout_margin="@dimen/_10sdp"
+                        android:visibility="gone"
+                        android:weightSum="2">
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/lyt_left_logo"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/card_left_logo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone"
+                                    app:cardElevation="0dp"
+                                    app:cardBackgroundColor="@android:color/transparent"
+                                    app:cardCornerRadius="@dimen/_3sdp"
+                                    app:cardUseCompatPadding="true">
+
+                                    <ImageView
+                                        android:id="@+id/img_left_companyLogo"
+                                        android:layout_width="@dimen/_50sdp"
+                                        android:layout_height="@dimen/_50sdp" />
+                                </androidx.cardview.widget.CardView>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyt_to_left"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:orientation="vertical"
+                                android:layout_weight="1"
+                                android:visibility="gone">
+
+                                <com.fincasys.seasonalgreeting.views.CustomTextView
+                                    android:id="@+id/txt_left_to_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="hii"
+                                    android:textSize="@dimen/_13ssp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+
+                                <com.fincasys.seasonalgreeting.views.CustomTextView
+                                    android:id="@+id/txt_left_title"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="@dimen/_22ssp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+
+                                <com.fincasys.seasonalgreeting.views.CustomTextView
+                                    android:id="@+id/txt_left_desc"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textSize="@dimen/_10ssp"
+                                   />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyt_from_left"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <com.fincasys.seasonalgreeting.views.CustomTextView
+
+                                    android:id="@+id/txt_left_from_user_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                 />
+                                <com.fincasys.seasonalgreeting.views.CustomTextView
+
+                                    android:id="@+id/txt_left_from_company_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!--Right Side-->
+                    <LinearLayout
+                        android:id="@+id/lyt_right_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_margin="@dimen/_10sdp"
+                        android:visibility="gone"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"></LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:id="@+id/lyt_right_logo"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="center">
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/card_right_logo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone"
+                                    app:cardBackgroundColor="@android:color/transparent"
+                                    app:cardCornerRadius="@dimen/_3sdp"
+                                    app:cardElevation="0dp"
+                                    app:cardUseCompatPadding="true">
+
+                                    <ImageView
+                                        android:id="@+id/img_right_companyLogo"
+                                        android:layout_width="@dimen/_50sdp"
+                                        android:layout_height="@dimen/_50sdp" />
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyt_to_right"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:visibility="gone">
+
+                                <com.fincasys.seasonalgreeting.views.CustomTextView
+
+                                    android:id="@+id/txt_right_to_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textSize="@dimen/_13ssp"
+                                     />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+
+                                <com.fincasys.seasonalgreeting.views.CustomTextView
+
+                                    android:id="@+id/txt_right_title"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="end"
+                                    android:text=""
+                                    android:textSize="@dimen/_22ssp" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+
+                                <com.fincasys.seasonalgreeting.views.CustomTextView
+
+                                    android:id="@+id/txt_right_desc"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text=""
+                                    android:textSize="@dimen/_10ssp"/>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/lyt_from_right"
+                                android:layout_width="match_parent"
+                                android:orientation="vertical"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:visibility="gone">
+
+                                <com.fincasys.seasonalgreeting.views.CustomTextView
+
+                                    android:id="@+id/txt_right_from_user_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="" />
+                                <com.fincasys.seasonalgreeting.views.CustomTextView
+
+                                    android:id="@+id/txt_right_from_company_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!-- Top Side-->
+                    <LinearLayout
+                        android:id="@+id/lyt_main_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="@dimen/_2sdp"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_10sdp"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:weightSum="2">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_top_logo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                app:cardBackgroundColor="@android:color/transparent"
+                                app:cardCornerRadius="@dimen/_3sdp"
+                                app:cardUseCompatPadding="true"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:id="@+id/img_top_logo"
+                                    android:layout_width="@dimen/_40sdp"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:layout_gravity="center" />
+                            </androidx.cardview.widget.CardView>
+
+                            <com.fincasys.seasonalgreeting.views.CustomTextView
+
+                                android:id="@+id/txt_top_titile"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:textSize="@dimen/_22ssp" />
+
+                            <com.fincasys.seasonalgreeting.views.CustomTextView
+
+                                android:id="@+id/txt_top_desc"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="0.5"
+                                android:textSize="@dimen/_10ssp" />
+                            <com.fincasys.seasonalgreeting.views.CustomTextView
+
+                                android:id="@+id/top_top_from_user_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text=""/>
+                            <com.fincasys.seasonalgreeting.views.CustomTextView
+
+                                android:id="@+id/top_top_from_company_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text=""
+                                android:padding="2dp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:weightSum="2"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                android:gravity="bottom">
+
+                                <com.fincasys.seasonalgreeting.views.CustomTextView
+
+                                    android:id="@+id/txt_top_bottom_from_user_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text=""
+                                    android:textSize="@dimen/textMedium12x" />
+                                <com.fincasys.seasonalgreeting.views.CustomTextView
+
+                                    android:id="@+id/txt_top_bottom_from_company_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text=""
+                                    android:textSize="@dimen/textMedium12x" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10sdp"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/_50sdp">
+
+                <RadioGroup
+                    android:id="@+id/select_radio_from_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <com.fincasys.seasonalgreeting.views.CustomTextView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="From"
+                        android:textColor="@color/black"
+                         />
+
+                    <RadioButton
+                        android:id="@+id/select_userName"
+                        style="@style/radionbutton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:padding="@dimen/_5sdp"
+                        android:text="User Name"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/grey_80"
+                        android:textSize="@dimen/textSmall10x" />
+
+                    <RadioButton
+                        android:id="@+id/select_userName_company"
+                        style="@style/radionbutton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:padding="@dimen/_5sdp"
+                        android:text="User Name From Company Name"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/grey_80"
+                        android:textSize="@dimen/textSmall10x" />
+
+                    <RadioButton
+                        android:id="@+id/select_compnay_name"
+                        style="@style/radionbutton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:padding="@dimen/_5sdp"
+                        android:text="Company Name"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/grey_80"
+                        android:textSize="@dimen/textSmall10x" />
+
+                </RadioGroup>
+
+                <LinearLayout
+                    android:id="@+id/lyt_edit_company_logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <com.fincasys.seasonalgreeting.views.CustomTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="Show Company Logo"
+                        android:textColor="@color/black"
+                         />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:cardCornerRadius="@dimen/_3sdp"
+                            app:cardUseCompatPadding="true">
+
+                            <ImageView
+                                android:id="@+id/visible_logo"
+                                android:layout_width="@dimen/_80sdp"
+                                android:layout_height="@dimen/_80sdp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <com.github.angads25.toggle.widget.LabeledSwitch
+                            android:id="@+id/switchshowLogo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:textSize="@dimen/textMedium12x"
+                            app:colorBorder="@color/colorAccent"
+                            app:on="false"
+                            app:textOff="NO"
+                            app:textOn="YES" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.fincasys.seasonalgreeting.views.CustomButton
+        android:id="@+id/btnShare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="@drawable/capsule_shape_colorprimery"
+        android:text="Share Greeting"
+        android:textColor="@color/white" />
+</RelativeLayout>

@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.Typeface;
 import android.text.TextUtils;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.widget.TextView;
 
 import com.fincasys.seasonalgreeting.R;
@@ -39,6 +40,18 @@ public class CustomTextView extends TextView {
         this.setMarqueeRepeatLimit(-1);
         this.setSelected(true);
     }
+
+    public void SetFont(Context context,String fontName){
+        Typeface tf = Typeface.createFromAsset(context.getAssets(),
+                "font/" + fontName + ".ttf");
+        setTypeface(tf);
+    }
+
+    public void SetFontSize(float size){
+        setTextSize(TypedValue.COMPLEX_UNIT_PX,size);
+    }
+
+
 
 
     private void style(Context context, AttributeSet attrs) {
@@ -77,6 +90,15 @@ public class CustomTextView extends TextView {
                 break;
             case 10:
                 fontName = R.string.OpenSans_SemiBoldItalic;
+                break;
+            case 11:
+                fontName = R.string.montserrat_regular;
+                break;
+            case 12:
+                fontName = R.string.montserrat_semi_bold;
+                break;
+            case 13:
+                fontName = R.string.montserrat_bold;
                 break;
             default:
                 fontName = R.string.OpenSans_Regular;

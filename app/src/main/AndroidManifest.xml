@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.fincasys.seasonalgreeting">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
+        android:usesCleartextTraffic="true"
         tools:replace="android:theme,android:icon"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"

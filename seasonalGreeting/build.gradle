@@ -66,5 +66,8 @@ dependencies {
     implementation 'org.apache.commons:commons-lang3:3.11'
 
     implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.github.angads25:toggle:1.1.0'
+
+
 
 }

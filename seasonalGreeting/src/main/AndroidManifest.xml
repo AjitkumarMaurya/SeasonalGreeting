@@ -2,4 +2,44 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fincasys.seasonalgreeting">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:largeHeap="true"
+        android:allowBackup="true"
+        android:theme="@style/AppTheme.NoActionBar">
+
+        <activity
+            android:name=".activity.CreateShareGreetingActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.ListOfGreetingsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".askPermission.PermissionsActivity"
+            android:theme="@style/Transparent"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.fincasys.seasonalgreeting.provider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+            <intent-filter>
+                <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
+        </provider>
+
+    </application>
 </manifest>
