@@ -1,0 +1,3 @@
+include ':seasonalGreeting'
+include ':app'
+rootProject.name = "SeasonalGreeting"
