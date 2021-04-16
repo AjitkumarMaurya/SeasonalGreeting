@@ -11,11 +11,28 @@
         app:cardCornerRadius="@dimen/_3sdp"
         app:cardUseCompatPadding="true"
         android:elevation="@dimen/_3sdp">
-        <ImageView
-            android:id="@+id/img_greeating"
+
+        <RelativeLayout
+            android:gravity="center"
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="fitXY"/>
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/img_greeating"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"/>
+
+            <ProgressBar
+                android:layout_centerInParent="true"
+                android:id="@+id/ps_load"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+
 
     </androidx.cardview.widget.CardView>
 

@@ -16,8 +16,10 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -26,12 +28,13 @@ import androidx.cardview.widget.CardView;
 import androidx.core.content.FileProvider;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.Priority;
 import com.bumptech.glide.request.RequestOptions;
 import com.fincasys.seasonalgreeting.R;
 import com.fincasys.seasonalgreeting.askPermission.PermissionHandler;
 import com.fincasys.seasonalgreeting.askPermission.Permissions;
 import com.fincasys.seasonalgreeting.helper.FileUtils;
+import com.fincasys.seasonalgreeting.helper.GlideImageLoader;
 import com.fincasys.seasonalgreeting.helper.OnSingleClickListener;
 import com.fincasys.seasonalgreeting.helper.SeasonalGreeatingNewResponse;
 import com.fincasys.seasonalgreeting.views.CustomButton;
@@ -56,6 +59,8 @@ public class CreateShareGreetingActivity extends AppCompatActivity {
     LinearLayout linLayMain;
     CustomTextView tvTitle;
     ImageView img_backgrund;
+    ProgressBar ps_load;
+    RelativeLayout rel_img_background;
     CustomButton btnShare;
     //--left text side
     LinearLayout lyt_left_logo;
@@ -153,6 +158,8 @@ public class CreateShareGreetingActivity extends AppCompatActivity {
         lyt_left_logo = findViewById(R.id.lyt_left_logo);
         btnShare = findViewById(R.id.btnShare);
         img_backgrund = findViewById(R.id.img_backgrund);
+        ps_load = findViewById(R.id.ps_load);
+        rel_img_background = findViewById(R.id.rel_img_background);
         ivShareCard = findViewById(R.id.ivShareCard);
         ivBack = findViewById(R.id.ivBack);
         ivHome = findViewById(R.id.ivHome);
@@ -479,13 +486,13 @@ public class CreateShareGreetingActivity extends AppCompatActivity {
     }
 
 
-    public static Bitmap getLayoutScreenShot(View view)
-    {
+    public static Bitmap getLayoutScreenShot(View view) {
         Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         view.draw(canvas);
         return bitmap;
     }
+
     private void shareResult(LinearLayout data, boolean isTimeLine) {
         @SuppressLint("SimpleDateFormat")
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HH_mm_ss");
@@ -597,19 +604,28 @@ public class CreateShareGreetingActivity extends AppCompatActivity {
         }
     }
 
-    public static void displayImageBannerNoPlaceHolder(Context ctx, ImageView img, String url) {
+    public void displayImageBannerNoPlaceHolder(Context ctx, ImageView img, String url) {
         try {
             if (url.startsWith("@drawable/")) {
                 int imageResource = ctx.getResources().getIdentifier(url.toString().trim(), null,
                         ctx.getPackageName());
                 Glide.with(ctx).load(imageResource)
                         .into(img);
+
+                ps_load.setVisibility(View.GONE);
+
             } else {
-                Glide.with(ctx)
-                        .load(url)
-                        .apply(new RequestOptions()
-                                .diskCacheStrategy(DiskCacheStrategy.ALL))
-                        .into(img);
+
+                try {
+                    RequestOptions options = new RequestOptions()
+                            .centerCrop()
+                            .priority(Priority.HIGH);
+                    new GlideImageLoader(img,
+                            ps_load).load(url, options);
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
             }
 
         } catch (Exception e) {

@@ -5,12 +5,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+import com.bumptech.glide.Priority;
+import com.bumptech.glide.request.RequestOptions;
 import com.fincasys.seasonalgreeting.R;
+import com.fincasys.seasonalgreeting.helper.GlideImageLoader;
 import com.fincasys.seasonalgreeting.helper.OnSingleClickListener;
 import com.fincasys.seasonalgreeting.helper.SeasonalGreeatingNewResponse;
 
@@ -45,8 +48,11 @@ public class GreetingImageAdapter extends RecyclerView.Adapter<GreetingImageAdap
     public void onBindViewHolder(@NonNull GreetingImageViewHolder holder, int position) {
 
         try {
-            Glide.with(context).load(imageArrays.get(position).getCoverImage())
-                    .into(holder.img_greeating);
+            RequestOptions options = new RequestOptions()
+                    .centerCrop()
+                    .priority(Priority.HIGH);
+            new GlideImageLoader(holder.img_greeating,
+                    holder.ps_load).load(imageArrays.get(position).getCoverImage(), options);
         } catch (Exception e) {
             e.printStackTrace();
 
@@ -70,10 +76,12 @@ public class GreetingImageAdapter extends RecyclerView.Adapter<GreetingImageAdap
     public class GreetingImageViewHolder extends RecyclerView.ViewHolder{
 
         ImageView img_greeating;
+        ProgressBar ps_load;
 
         public GreetingImageViewHolder(@NonNull View itemView) {
             super(itemView);
             img_greeating = itemView.findViewById(R.id.img_greeating);
+            ps_load = itemView.findViewById(R.id.ps_load);
         }
     }
 }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_BG"
@@ -81,20 +80,37 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <ImageView
-                        android:id="@+id/img_backgrund"
+                    <RelativeLayout
+                        android:background="@android:color/transparent"
+                        android:id="@+id/rel_img_background"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:scaleType="fitXY" />
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/img_backgrund"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY" />
+
+                        <ProgressBar
+                            android:layout_centerInParent="true"
+                            android:id="@+id/ps_load"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                    </RelativeLayout>
+
+
                     <!-- Left Side-->
                     <LinearLayout
                         android:id="@+id/lyt_left_text"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:layout_margin="@dimen/_10sdp"
                         android:orientation="horizontal"
-                       android:layout_margin="@dimen/_10sdp"
                         android:visibility="gone"
                         android:weightSum="2">
+
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -113,9 +129,9 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:visibility="gone"
-                                    app:cardElevation="0dp"
                                     app:cardBackgroundColor="@android:color/transparent"
                                     app:cardCornerRadius="@dimen/_3sdp"
+                                    app:cardElevation="0dp"
                                     app:cardUseCompatPadding="true">
 
                                     <ImageView
@@ -129,8 +145,8 @@
                                 android:id="@+id/lyt_to_left"
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
-                                android:orientation="vertical"
                                 android:layout_weight="1"
+                                android:orientation="vertical"
                                 android:visibility="gone">
 
                                 <com.fincasys.seasonalgreeting.views.CustomTextView
@@ -163,8 +179,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text=""
-                                    android:textSize="@dimen/_10ssp"
-                                   />
+                                    android:textSize="@dimen/_10ssp" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -180,16 +195,16 @@
                                     android:id="@+id/txt_left_from_user_name"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:text=""
-                                 />
+                                    android:text="" />
+
                                 <com.fincasys.seasonalgreeting.views.CustomTextView
 
                                     android:id="@+id/txt_left_from_company_name"
                                     android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    />
+                                    android:layout_height="wrap_content" />
                             </LinearLayout>
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
@@ -202,8 +217,8 @@
                         android:id="@+id/lyt_right_text"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal"
                         android:layout_margin="@dimen/_10sdp"
+                        android:orientation="horizontal"
                         android:visibility="gone"
                         android:weightSum="2">
 
@@ -257,8 +272,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text=""
-                                    android:textSize="@dimen/_13ssp"
-                                     />
+                                    android:textSize="@dimen/_13ssp" />
 
                             </LinearLayout>
 
@@ -288,16 +302,16 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text=""
-                                    android:textSize="@dimen/_10ssp"/>
+                                    android:textSize="@dimen/_10ssp" />
 
                             </LinearLayout>
 
                             <LinearLayout
                                 android:id="@+id/lyt_from_right"
                                 android:layout_width="match_parent"
-                                android:orientation="vertical"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
+                                android:orientation="vertical"
                                 android:visibility="gone">
 
                                 <com.fincasys.seasonalgreeting.views.CustomTextView
@@ -306,6 +320,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:text="" />
+
                                 <com.fincasys.seasonalgreeting.views.CustomTextView
 
                                     android:id="@+id/txt_right_from_company_name"
@@ -320,11 +335,11 @@
                         android:id="@+id/lyt_main_top"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:paddingTop="@dimen/_2sdp"
+                        android:orientation="vertical"
                         android:paddingLeft="@dimen/_10sdp"
+                        android:paddingTop="@dimen/_2sdp"
                         android:paddingRight="@dimen/_10sdp"
                         android:paddingBottom="@dimen/_10sdp"
-                        android:orientation="vertical"
                         android:visibility="gone"
                         android:weightSum="2">
 
@@ -341,8 +356,8 @@
                                 android:layout_gravity="center"
                                 app:cardBackgroundColor="@android:color/transparent"
                                 app:cardCornerRadius="@dimen/_3sdp"
-                                app:cardUseCompatPadding="true"
-                                app:cardElevation="0dp">
+                                app:cardElevation="0dp"
+                                app:cardUseCompatPadding="true">
 
                                 <ImageView
                                     android:id="@+id/img_top_logo"
@@ -366,28 +381,31 @@
                                 android:layout_height="0dp"
                                 android:layout_weight="0.5"
                                 android:textSize="@dimen/_10ssp" />
+
                             <com.fincasys.seasonalgreeting.views.CustomTextView
 
                                 android:id="@+id/top_top_from_user_name"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text=""/>
+                                android:text="" />
+
                             <com.fincasys.seasonalgreeting.views.CustomTextView
 
                                 android:id="@+id/top_top_from_company_name"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:text=""
-                                android:padding="2dp"/>
+                                android:padding="2dp"
+                                android:text="" />
                         </LinearLayout>
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:layout_weight="1"
-                            android:weightSum="2"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:weightSum="2">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -398,8 +416,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="0dp"
                                 android:layout_weight="1"
-                                android:orientation="vertical"
-                                android:gravity="bottom">
+                                android:gravity="bottom"
+                                android:orientation="vertical">
 
                                 <com.fincasys.seasonalgreeting.views.CustomTextView
 
@@ -409,6 +427,7 @@
                                     android:layout_gravity="center"
                                     android:text=""
                                     android:textSize="@dimen/textMedium12x" />
+
                                 <com.fincasys.seasonalgreeting.views.CustomTextView
 
                                     android:id="@+id/txt_top_bottom_from_company_name"
@@ -448,8 +467,7 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="@dimen/_5sdp"
                         android:text="From"
-                        android:textColor="@color/black"
-                         />
+                        android:textColor="@color/black" />
 
                     <RadioButton
                         android:id="@+id/select_userName"
@@ -501,8 +519,7 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="@dimen/_5sdp"
                         android:text="Show Company Logo"
-                        android:textColor="@color/black"
-                         />
+                        android:textColor="@color/black" />
 
                     <LinearLayout
                         android:layout_width="match_parent"

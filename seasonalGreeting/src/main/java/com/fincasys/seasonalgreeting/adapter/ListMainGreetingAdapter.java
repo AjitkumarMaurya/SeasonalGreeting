@@ -60,9 +60,6 @@ public class ListMainGreetingAdapter extends RecyclerView.Adapter<ListMainGreeti
             }
         });
 
-
-
-
     }
     @Override
     public int getItemCount() {
