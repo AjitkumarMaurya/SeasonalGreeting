@@ -37,6 +37,7 @@ import com.fincasys.seasonalgreeting.helper.FileUtils;
 import com.fincasys.seasonalgreeting.helper.GlideImageLoader;
 import com.fincasys.seasonalgreeting.helper.OnSingleClickListener;
 import com.fincasys.seasonalgreeting.helper.SeasonalGreeatingNewResponse;
+import com.fincasys.seasonalgreeting.helper.SeasonalGreetingBuilder;
 import com.fincasys.seasonalgreeting.views.CustomButton;
 import com.fincasys.seasonalgreeting.views.CustomTextView;
 import com.github.angads25.toggle.interfaces.OnToggledListener;
@@ -178,10 +179,10 @@ public class CreateShareGreetingActivity extends AppCompatActivity {
 
             TEXT_SIDE = imageArray.getImageAlignment();
 
-            UserFullName = bundle.getString("userName");
-            UserCompanyName = bundle.getString("companyName");
-            companyLogo = bundle.getString("companyLogo");
-
+            UserFullName = SeasonalGreetingBuilder.getUserName();
+            UserCompanyName = SeasonalGreetingBuilder.getCompanyName();
+            companyLogo = SeasonalGreetingBuilder.getCompanyLogo();
+            btnShare.setText(SeasonalGreetingBuilder.getShareBtnText());
             newProfileGet();
 
             switchshowLogo.setOnToggledListener(new OnToggledListener() {
@@ -568,6 +569,14 @@ public class CreateShareGreetingActivity extends AppCompatActivity {
         select_userName.setText("" + UserFullName);
         select_userName_company.setText("" + UserFullName + " And " + UserCompanyName);
         select_compnay_name.setText("" + UserCompanyName);
+
+        select_userName.setTextSize(SeasonalGreetingBuilder.getTxtSize());
+        select_userName_company.setTextSize(SeasonalGreetingBuilder.getTxtSize());
+        select_compnay_name.setTextSize(SeasonalGreetingBuilder.getTxtSize());
+
+        select_userName.setTextColor(Color.parseColor(SeasonalGreetingBuilder.getTxtColor()));
+        select_userName_company.setTextColor(Color.parseColor(SeasonalGreetingBuilder.getTxtColor()));
+        select_compnay_name.setTextColor(Color.parseColor(SeasonalGreetingBuilder.getTxtColor()));
 
         if (companyLogo != null
                 && companyLogo.length() > 0) {

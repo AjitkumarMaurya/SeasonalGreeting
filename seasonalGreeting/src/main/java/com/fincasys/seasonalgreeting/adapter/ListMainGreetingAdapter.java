@@ -1,6 +1,8 @@
 package com.fincasys.seasonalgreeting.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.fincasys.seasonalgreeting.R;
 import com.fincasys.seasonalgreeting.helper.SeasonalGreeatingNewResponse;
+import com.fincasys.seasonalgreeting.helper.SeasonalGreetingBuilder;
 import com.fincasys.seasonalgreeting.views.CustomTextView;
 
 import java.util.List;
@@ -45,8 +48,12 @@ public class ListMainGreetingAdapter extends RecyclerView.Adapter<ListMainGreeti
     }
 
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull MainGreetingViewHolder holder, int position) {
+
+        holder.txt_event_name.setTextColor(Color.parseColor(SeasonalGreetingBuilder.getTxtColor()));
+        holder.txt_event_name.setTextSize(SeasonalGreetingBuilder.getTxtSize());
         holder.txt_event_name.setText(""+seasonalGreetings.get(position).getTitle());
        // holder.list_greetings.setLayoutManager(new LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false));
         holder.list_greetings.setLayoutManager(new GridLayoutManager(context,3));

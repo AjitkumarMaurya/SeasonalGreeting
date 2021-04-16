@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.fincasys.seasonalgreeting.activity.ListOfGreetingsActivity;
 import com.fincasys.seasonalgreeting.helper.SeasonalGreeatingNewResponse;
+import com.fincasys.seasonalgreeting.helper.SeasonalGreetingBuilder;
 import com.fincasys.seasonalgreeting.network.RestCall;
 import com.fincasys.seasonalgreeting.network.RestClient;
 
@@ -64,14 +65,17 @@ public class MainActivity extends AppCompatActivity {
 
                                     if (seasonalGreeatingNewResponse.getSeasonalGreetings()!=null && seasonalGreeatingNewResponse.getSeasonalGreetings().size()>0){
 
-                                        Bundle bundle= new Bundle();
-                                        bundle.putSerializable("seasonalGreeatingNewResponse",seasonalGreeatingNewResponse);
-                                        Intent intent = new Intent(MainActivity.this, ListOfGreetingsActivity.class);
-                                        intent.putExtras(bundle);
-                                        intent.putExtra("userName","Ajiy");
-                                        intent.putExtra("companyName","mayfd");
-                                        intent.putExtra("companyLogo","https://www.fincasys.com/images/logo.png");
-                                        startActivity(intent);
+                                        SeasonalGreetingBuilder seasonalGreetingBuilder=  new SeasonalGreetingBuilder.Builder(MainActivity.this).
+                                                setSeasonalResponse(seasonalGreeatingNewResponse).
+                                                titleText("Seasonal Greeting").
+                                                userName("Ajiy").
+                                                shareBtnText("Share Greeting").
+                                                companyLogo("https://www.fincasys.com/images/logo.png").
+                                                txtSize(getResources().getDimension(R.dimen.textSmall)).
+                                                txtColor("#000000").
+                                                companyName("mayfd").build();
+
+                                        seasonalGreetingBuilder.start();
 
                                     }
                                 }

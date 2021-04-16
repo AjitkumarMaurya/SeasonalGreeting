@@ -11,17 +11,18 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:paddingStart="@dimen/_15sdp"
+        android:paddingStart="@dimen/_10sdp"
         android:paddingEnd="@dimen/_15sdp">
 
         <ImageView
             android:id="@+id/ivBack"
-            android:layout_width="@dimen/_20sdp"
+            android:layout_width="@dimen/_16sdp"
             android:layout_height="@dimen/_20sdp"
             android:layout_centerVertical="true"
             android:src="@drawable/ic_back_arrow" />
 
         <com.fincasys.seasonalgreeting.views.CustomTextView
+            android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
