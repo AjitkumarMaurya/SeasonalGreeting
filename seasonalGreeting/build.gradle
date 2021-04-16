@@ -3,8 +3,8 @@ plugins {
 }
 
 apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'kotlin-android'
 group='com.github.AjitkumarMaurya'
+apply plugin: 'kotlin-android'
 apply plugin: 'com.android.library'
 apply plugin: 'com.jakewharton.butterknife'
 
