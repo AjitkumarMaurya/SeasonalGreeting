@@ -18,7 +18,6 @@ import com.fincasys.seasonalgreeting.helper.SeasonalGreeatingNewResponse;
 import com.fincasys.seasonalgreeting.helper.SeasonalGreetingBuilder;
 import com.fincasys.seasonalgreeting.views.CustomTextView;
 
-import butterknife.ButterKnife;
 
 public class ListOfGreetingsActivity extends AppCompatActivity {
 
@@ -38,7 +37,6 @@ public class ListOfGreetingsActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_of_greetings);
-        ButterKnife.bind(this);
 
         MainList = findViewById(R.id.MainList);
         relativeNoDataFound = findViewById(R.id.relativeNoDataFound);

@@ -19,8 +19,6 @@ import com.fincasys.seasonalgreeting.views.CustomTextView;
 
 import java.util.List;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class ListMainGreetingAdapter extends RecyclerView.Adapter<ListMainGreetingAdapter.MainGreetingViewHolder> {
     Context context;
@@ -83,7 +81,6 @@ public class ListMainGreetingAdapter extends RecyclerView.Adapter<ListMainGreeti
             super(itemView);
             txt_event_name = itemView.findViewById(R.id.txt_event_name);
             list_greetings = itemView.findViewById(R.id.List_greetings);
-            ButterKnife.bind(this,itemView);
         }
     }
 }
