@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                                                 companyLogo("https://www.fincasys.com/images/logo.png").
                                                 txtSize(getResources().getDimension(R.dimen.textSmall)).
                                                 txtColor("#000000").
+                                                toolBarColor("#cccccc").
                                                 companyName("mayfd").build();
 
                                         seasonalGreetingBuilder.start();

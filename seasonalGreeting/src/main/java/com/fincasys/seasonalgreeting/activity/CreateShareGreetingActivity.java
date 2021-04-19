@@ -61,7 +61,7 @@ public class CreateShareGreetingActivity extends AppCompatActivity {
     CustomTextView tvTitle;
     ImageView img_backgrund;
     ProgressBar ps_load;
-    RelativeLayout rel_img_background;
+    RelativeLayout rel_img_background,toolBar;
     CustomButton btnShare;
     //--left text side
     LinearLayout lyt_left_logo;
@@ -119,6 +119,7 @@ public class CreateShareGreetingActivity extends AppCompatActivity {
 
         linLayMain = findViewById(R.id.linLayMain);
         tvTitle = findViewById(R.id.tvTitle);
+        toolBar = findViewById(R.id.toolBar);
         switchshowLogo = findViewById(R.id.switchshowLogo);
         visible_logo = findViewById(R.id.visible_logo);
         lyt_edit_company_logo = findViewById(R.id.lyt_edit_company_logo);
@@ -183,7 +184,15 @@ public class CreateShareGreetingActivity extends AppCompatActivity {
             UserCompanyName = SeasonalGreetingBuilder.getCompanyName();
             companyLogo = SeasonalGreetingBuilder.getCompanyLogo();
             btnShare.setText(SeasonalGreetingBuilder.getShareBtnText());
+
+            if (SeasonalGreetingBuilder.getToolBarColor()!=null){
+                toolBar.setBackgroundColor(Color.parseColor(SeasonalGreetingBuilder.getToolBarColor()));
+                switchshowLogo.setColorBorder(Color.parseColor(SeasonalGreetingBuilder.getToolBarColor()));
+
+            }
+
             newProfileGet();
+
 
             switchshowLogo.setOnToggledListener(new OnToggledListener() {
                 @Override

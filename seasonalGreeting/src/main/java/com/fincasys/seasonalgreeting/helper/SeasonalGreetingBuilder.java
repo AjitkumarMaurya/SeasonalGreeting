@@ -16,6 +16,8 @@ public class SeasonalGreetingBuilder {
     private static String shareBtnText;
     private static float txtSize;
     private static String txtColor;
+    private static String toolBarColor;
+
 
     public Context getContext() {
         return context;
@@ -33,7 +35,8 @@ public class SeasonalGreetingBuilder {
         private String companyName = null;
         private String companyLogo = null;
         private String shareBtnText = null;
-        private String txtColor = "#000";
+        private String txtColor = "#000000";
+        private String toolBarColor = "#cccccc";
         private float txtSize = 10f;
         private Context c = null;
 
@@ -77,6 +80,11 @@ public class SeasonalGreetingBuilder {
             return this;
         }
 
+        public Builder toolBarColor(String toolBarColor) {
+            this.toolBarColor = toolBarColor;
+            return this;
+        }
+
         public Builder(Context c) {
             this.c = c;
         }
@@ -99,6 +107,7 @@ public class SeasonalGreetingBuilder {
         shareBtnText = builder.shareBtnText;
         txtSize = builder.txtSize;
         txtColor = builder.txtColor;
+        toolBarColor = builder.toolBarColor;
         seasonalGreeatingNewResponse = builder.seasonalGreeatingNewResponse;
     }
 
@@ -132,5 +141,9 @@ public class SeasonalGreetingBuilder {
 
     public static float getTxtSize() {
         return txtSize;
+    }
+
+    public static String getToolBarColor() {
+        return toolBarColor;
     }
 }

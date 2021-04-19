@@ -9,6 +9,7 @@
     tools:context=".activity.ListOfGreetingsActivity">
 
     <RelativeLayout
+        android:id="@+id/rel_tool_bar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
         android:paddingStart="@dimen/_10sdp"

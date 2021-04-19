@@ -1,6 +1,7 @@
 package com.fincasys.seasonalgreeting.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -23,7 +24,7 @@ public class ListOfGreetingsActivity extends AppCompatActivity {
 
     RecyclerView MainList;
 
-    RelativeLayout relativeNoDataFound;
+    RelativeLayout relativeNoDataFound,rel_tool_bar;
 
     CustomTextView tv_title;
 
@@ -41,12 +42,12 @@ public class ListOfGreetingsActivity extends AppCompatActivity {
 
         MainList = findViewById(R.id.MainList);
         relativeNoDataFound = findViewById(R.id.relativeNoDataFound);
+        rel_tool_bar = findViewById(R.id.rel_tool_bar);
         ivBack = findViewById(R.id.ivBack);
         tv_title = findViewById(R.id.tv_title);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         MainList.setLayoutManager(linearLayoutManager);
-
 
         ivBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +58,9 @@ public class ListOfGreetingsActivity extends AppCompatActivity {
         });
 
 
+        if (SeasonalGreetingBuilder.getToolBarColor()!=null){
+            rel_tool_bar.setBackgroundColor(Color.parseColor(SeasonalGreetingBuilder.getToolBarColor()));
+        }
         tv_title.setTextWithMarquee(SeasonalGreetingBuilder.getTitleText()+"");
         seasonalGreeatingNewResponse = SeasonalGreetingBuilder.getSeasonalGreeatingNewResponse();
 
